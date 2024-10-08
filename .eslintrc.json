@@ -1,0 +1,23 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "plugins": ["prettier", "import"],
+  "rules": {
+    "quotes": ["error", "single"],
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": ["error", {
+      "semi": false,
+      "singleQuote": true,
+      "useTabs": false,
+      "tabWidth": 4
+    }],
+    "sort-imports": "off",
+    "import/order": ["error", {
+      "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+      "newlines-between": "always",
+      "alphabetize": {
+        "order": "asc",
+        "caseInsensitive": true
+      }
+    }]
+  }
+}
