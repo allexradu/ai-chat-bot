@@ -4,6 +4,7 @@ import Head from 'next/head'
 
 import { ThemeProvider } from 'styled-components'
 import { theme } from '@/infrastructure/theme'
+import { StoreProvider } from '@/data/stores'
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
@@ -22,9 +23,11 @@ export default function App({ Component, pageProps }: AppProps) {
                 <meta name="dcterms.language" content="EN" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <ThemeProvider theme={theme}>
-                <Component {...pageProps} />
-            </ThemeProvider>
+            <StoreProvider>
+                <ThemeProvider theme={theme}>
+                    <Component {...pageProps} />
+                </ThemeProvider>
+            </StoreProvider>
         </>
     )
 }
